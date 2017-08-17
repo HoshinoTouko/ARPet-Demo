@@ -8,6 +8,12 @@
 
 ```node app.js```
 
+### Websites
+
+- QnAmaker AI https://qnamaker.ai/
+- LUIS https://luis.ai/
+- 图灵机器人 http://www.tuling123.com/member/
+
 ### Resources
 
 - Bot Framework Emulator  

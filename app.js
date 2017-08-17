@@ -16,7 +16,7 @@ var bot = new builder.UniversalBot(connector);
 global.bot = bot;
 
 // Initialize & load modules
-const { Hello, QnAmaker, LUIS } = require("./bot_modules/modules");
+const { Hello, QnAmaker, LUIS, tuling123 } = require("./bot_modules/modules");
 
 bot.dialog('/', [
     async function(session){
@@ -29,7 +29,7 @@ bot.dialog('/', [
         let userMessage = session.message.text;
         // responders 为响应userMassage的对象，其中必须包含getAnswer的函数
 
-        let responders = [new Hello(), new QnAmaker(), new LUIS()];
+        let responders = [new Hello(), new QnAmaker(), new LUIS(), new tuling123()];
         let promises = responders.map(function(responder) {
             return responder.getAnswer(userMessage, session);
         });

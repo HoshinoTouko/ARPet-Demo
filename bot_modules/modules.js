@@ -99,12 +99,35 @@ class Hello extends Responder {
         return await new Promise(function(resolve, reject){
             console.log('Hello module receive message:"' + userMessage + '"');
             console.log('Hello module.');
-            if (userMessage === "你好") {
+            if (userMessage === "你好Test") {
             	resolve("hello")
             } else {
                 resolve("");
             }
         });
+	}
+}
+
+class tuling123 extends Responder {
+	async getAnswer(userMessage, session) {
+        if (!userMessage)
+			return "";
+
+		let tuling = require('./other_modules/tuling123_bot');
+		let tl = new tuling();
+		let result = await tl.getAns(userMessage)
+			.then(function(result){
+				if (result['code'] == 100000){
+					return result['text'];
+				}
+				else{
+					return '';
+				}
+			}).catch(function(err){
+				result = '';
+				console.error('Error: ' + err);
+			});
+		return result;
 	}
 }
 
@@ -160,5 +183,6 @@ module.exports = {
 	Responder,
 	Hello,
 	QnAmaker,
-	LUIS
+	LUIS,
+	tuling123
 };

@@ -17,6 +17,11 @@
 ### Resources
 
 - Bot Framework Emulator  
-  群文件
+  at shared files in QQ Group.
 - Nodejs 8.x  
-  群文件
+  at shared files in QQ Group.
+
+### Notice!
+
+- You can find Microsoft ID and pass at announcements in QQ Group.
+- You can find .env file at shared files in QQ Group.
